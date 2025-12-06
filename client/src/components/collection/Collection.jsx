@@ -9,8 +9,10 @@ export default function Collection()
 
     const[cars, setCars] = useState([]);
 
+    const [selectedCategory, setSelectedCategory] = useState('all');
+
      useEffect(() => {
-        // Define an async function to handle the fetch operation
+      
         const fetchCars = async () => {
             try {
                 const response = await fetch(BASE_URL);
@@ -36,13 +38,23 @@ export default function Collection()
 
         },[]);
 
-        const carList = cars.map(car => (
+        const handleCategoryClick = (category) => {
+            setSelectedCategory(category);
+        };
+
+        const filteredCars = selectedCategory  === 'all'
+        ? cars
+        : cars.filter(car => car.category.toLowerCase() === selectedCategory.toLowerCase());
+
+        const carList = filteredCars.map(car => (
             <Car key  = {car._id || car.mark + car.model} {...car} />
         ));
 
         const content = cars.content = cars.length > 0
         ? carList
         : <p className="no-cars">No cars found in the collection.</p>;
+
+
 
 
 
@@ -55,15 +67,24 @@ export default function Collection()
             </div>
             
             <div className="category-tabs">
-                <button className="tab-btn active" data-category="all">All</button>
-                <button className="tab-btn" data-category="sport">Sport</button>
-                <button className="tab-btn" data-category="suv">SUV</button>
-                <button className="tab-btn" data-category="luxury">Luxury</button>
-                <button className="tab-btn" data-category="limited">Limited Edition</button>
+               
+               
+                {['all', 'sport', 'suv', 'luxury', 'limited'].map(category => (
+                    <button 
+                        key={category}
+                        className={`tab-btn ${selectedCategory === category ? 'active' : ''}`}
+                        data-category={category}
+                      
+                        onClick={() => handleCategoryClick(category)}
+                    >
+                       
+                        {category.charAt(0).toUpperCase() + category.slice(1)}
+                        {category === 'limited' && ' Edition'}
+                    </button>
+                ))}
             </div>
 
             <div className="grid" id="collectionsGrid">
-                {/* 4. Render the dynamically created car list here */}
                 {content}
             </div>
         </section>
