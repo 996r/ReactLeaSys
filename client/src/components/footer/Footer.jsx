@@ -5,8 +5,7 @@ export default function Footer() {
         <div className="footer-brand">
           <h3>NOIR</h3>
           <p>
-            Redefining fashion with bold designs, sustainable practices, and
-            uncompromising quality. Join us in creating the future of style.
+            We share your passion. We offer an unparalleled experience in finding the perfect young-timer, investment and sports cars.
           </p>
           <div className="social-links">
             <link className="social-link" to="#" />
@@ -23,23 +22,23 @@ export default function Footer() {
           <ul>
             <li>
               <link to="#" />
-              New Arrivals
+              SUV
             </li>
             <li>
               <link to="#" />
-              Women
+              Sport
             </li>
             <li>
               <link to="#" />
-              Men
+              Luxury
             </li>
             <li>
               <link to="#" />
-              Accessories
+              Limited Edition
             </li>
             <li>
               <link to="#" />
-              Sale
+              All
             </li>
           </ul>
         </div>
@@ -52,7 +51,7 @@ export default function Footer() {
             </li>
             <li>
               <link to="#" />
-              Size Guide
+              Order Guide
             </li>
             <li>
               <link to="#" />
@@ -85,7 +84,7 @@ export default function Footer() {
             </li>
             <li>
               <link to="#" />
-              Sustainability
+              Lease
             </li>
             <li>
               <link to="#" />
@@ -96,7 +95,7 @@ export default function Footer() {
       </div>
       <div className="footer-bottom">
         <p>
-          © 2025 NOIR. All rights reserved. | Designed by{" "}
+          © 2025 CarLeaseBulgaria. All rights reserved. | Designed by{" "}
           <link
             rel="nofollow"
             style={{
@@ -104,9 +103,9 @@ export default function Footer() {
               textDecoration: "none",
             }}
             target="_blank"
-            to="https://templatemo.com"
+            to=""
           />
-          TemplateMo
+          
         </p>
         <div className="payment-methods">
           <div className="payment-icon">VISA</div>

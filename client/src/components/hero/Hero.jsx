@@ -77,7 +77,7 @@ export default function Hero() {
                     </div>
                     <div className="cta-group">
                         <a href="#collections" className="cta-button primary">Explore Collection</a>
-                        <a href="#featured" className="cta-button outline">Watch Runway</a>
+                        <a href="#featured" className="cta-button outline">Exlusive Services</a>
                     </div>
                 </div>
                 <div className="hero-right">
