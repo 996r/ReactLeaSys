@@ -1,0 +1,95 @@
+ 
+ {
+    "5c7d8f0e-3a9b-4c2d-9e1f-6a4b3c8d2e7a": {
+        "_id": "5c7d8f0e-3a9b-4c2d-9e1f-6a4b3c8d2e7a",
+        
+        "mark": "Porsche",
+        "model": "911 Cup",
+        "price": 180000,
+        "date_of_manufacture": "2020-05-19",
+        "imageUrl": "/images/porsche_911_cup.jpeg",
+        "summary": "A story-driven, open world fantasy RPG. Play as Geralt of Rivia, a monster slayer for hire, who must find the Child of Prophecy in a vast, war-torn world. The game is known for its morally gray choices, mature storyline, and expansive world exploration.",
+        "category": "Sport",
+        "_createdOn": 1617194350000
+    },
+     "5c7d8f0e-3a9b-4c2d-9e1f-6a4b3c8d2e7b": {
+        "_id": "5c7d8f0e-3a9b-4c2d-9e1f-6a4b3c8d2e7b",
+        
+        "mark": "Mercedes",
+        "model": "SL65 Black Edition",
+        "price": 950000,
+        "date_of_manufacture": "2016-05-19",
+        "imageUrl": "/images/mercedes_sl65.jpeg",
+        "summary": "A story-driven, open world fantasy RPG. Play as Geralt of Rivia, a monster slayer for hire, who must find the Child of Prophecy in a vast, war-torn world. The game is known for its morally gray choices, mature storyline, and expansive world exploration.",
+        "category": "Sport",
+        "_createdOn": 1617194300000
+    },
+    "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d": {
+        "_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+        "mark": "Tesla",
+        "model": "Model X Plaid",
+        "price": 129990,
+        "date_of_manufacture": "2023-01-10",
+        "imageUrl": "/images/tesla_modelx_plaid.jpeg",
+        "summary": "A high-performance electric SUV with an unparalleled combination of speed, utility, and technology. Features Falcon Wing doors and a tri-motor setup.",
+        "category": "SUV",
+        "_createdOn": 1673418000000
+    },
+    "1f2e3d4c-5b6a-7f8e-9d0c-1b2a3f4e5d6c": {
+        "_id": "1f2e3d4c-5b6a-7f8e-9d0c-1b2a3f4e5d6c",
+        "mark": "Bugatti",
+        "model": "Chiron Super Sport 300+",
+        "price": 3900000,
+        "date_of_manufacture": "2021-08-25",
+        "imageUrl": "/images/bugatti_chiron_300.jpeg",
+        "summary": "The ultimate hypercar engineered for extreme speed, being the first production car to break the 300 mph barrier. A limited edition masterpiece of automotive engineering.",
+        "category": "Limited Edition",
+        "_createdOn": 1629853200000
+    },
+    "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d": {
+        "_id": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+        "mark": "Rolls-Royce",
+        "model": "Phantom VIII",
+        "price": 460000,
+        "date_of_manufacture": "2020-11-01",
+        "imageUrl": "/images/rollsroyce_phantom.jpeg",
+        "summary": "The pinnacle of automotive luxury and silent motion. Hand-built with the finest materials, it offers a bespoke experience with a focus on unparalleled passenger comfort.",
+        "category": "Luxury",
+        "_createdOn": 1604278800000
+    },
+    "7g8h9i0j-1k2l-3m4n-5o6p-7q8r9s0t1u2v": {
+        "_id": "7g8h9i0j-1k2l-3m4n-5o6p-7q8r9s0t1u2v",
+        "mark": "Porsche",
+        "model": "911 GT3 RS",
+        "price": 241300,
+        "date_of_manufacture": "2022-09-05",
+        "imageUrl": "/images/porsche_911_gt3rs.jpeg",
+        "summary": "A street-legal racing machine, designed for maximum track performance. Features extreme aerodynamics and a high-revving naturally aspirated engine.",
+        "category": "Sport",
+        "_createdOn": 1662368400000
+    },
+    "b3c4d5e6-f7a8-9b0c-1d2e-3f4a5b6c7d8e": {
+        "_id": "b3c4d5e6-f7a8-9b0c-1d2e-3f4a5b6c7d8e",
+        "mark": "Land Rover",
+        "model": "Defender 110 V8",
+        "price": 115000,
+        "date_of_manufacture": "2022-03-15",
+        "imageUrl": "/images/landrover_defender_v8.jpeg",
+        "summary": "A rugged and powerful SUV that balances legendary off-road capability with modern luxury and a powerful V8 engine for high-speed cruising.",
+        "category": "SUV",
+        "_createdOn": 1647312000000
+    },
+    "c5d6e7f8-g9h0-i1j2-k3l4-m5n6o7p8q9r0": {
+        "_id": "c5d6e7f8-g9h0-i1j2-k3l4-m5n6o7p8q9r0",
+        "mark": "Nissan",
+        "model": "GT-R Nismo",
+        "price": 210740,
+        "date_of_manufacture": "2024-02-14",
+        "imageUrl": "/images/nissan_gtr_nismo.jpeg",
+        "summary": "The ultimate evolution of the legendary 'Godzilla.' This track-focused edition features increased power, enhanced aerodynamics, and revised suspension, making it a world-class performance vehicle.",
+        "category": "Sport",
+        "_createdOn": 1707926400000
+    }
+     
+    
+}

@@ -1,4 +1,10 @@
-import { useState } from 'react'
+import Header from "./components/header/Header"
+import {  Routes } from "react-router";
+import Footer from "./components/footer/Footer";
+import Hero from "./components/hero/Hero";
+import Collection from "./components/collection/Collection";
+import Feature from "./components/feature/Feature";
+import Contact from "./components/contact/Contact";
 
 
 
@@ -7,7 +13,15 @@ function App() {
 
   return (
     <>
-     <h1>This is the sample</h1>
+    <Header/>
+    <Hero/>
+    <Collection/>
+    <Feature/>
+    <Contact/>
+    {/* <Routes>
+
+    </Routes> */}
+    <Footer/>
     </>
   )
 }
