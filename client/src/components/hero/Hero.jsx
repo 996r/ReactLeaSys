@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 
 const BASE_URL = "http://localhost:3030/jsonstore/cars";
@@ -76,8 +77,8 @@ export default function Hero() {
                         </div>
                     </div>
                     <div className="cta-group">
-                        <a href="#collections" className="cta-button primary">Explore Collection</a>
-                        <a href="#featured" className="cta-button outline">Exlusive Services</a>
+                        <Link to="/collection" className="cta-button primary">Explore Collection</Link>
+                        <Link to="/feature" className="cta-button outline">Exlusive Services</Link>
                     </div>
                 </div>
                 <div className="hero-right">

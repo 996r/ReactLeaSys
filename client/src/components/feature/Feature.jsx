@@ -1,4 +1,7 @@
+import { Link } from "react-router"
+
 export default function Feature () {
+
 
     return (
         <section className="featured" id="featured">
@@ -27,7 +30,7 @@ export default function Feature () {
                         </div>
                     </div>
                     
-                    <a href="#collections" className="feature-cta">Discover Our Collection</a>
+                    <Link to="/collection" className="feature-cta">Discover Our Collection</Link>
                 </div>
                 
                 <div className="featured-image-section">

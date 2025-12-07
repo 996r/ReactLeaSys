@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+
 export default function Header() {
   return (
     <nav id="navbar">
@@ -30,28 +31,34 @@ export default function Header() {
 
         <ul className="nav-links">
           <li>
-            <Link to="#home" className="nav-link active">
+            <Link to="/" className="nav-link active">
               Home
             </Link>
           </li>
           <li>
-            <Link to="#collections" className="nav-link">
+            <Link to="/collection" className="nav-link">
               Collections
             </Link>
           </li>
           <li>
-            <Link to="#featured" className="nav-link">
+            <Link to="/feature" className="nav-link">
               Featured
             </Link>
           </li>
           <li>
-            <Link to="#contact" className="nav-link">
+            
+            <Link to="/contact" className="nav-link">
               Contact
             </Link>
           </li>
           <li>
-            <Link to="#contact" className="nav-cta">
-              Get In Touch
+            <Link to="/login" className="nav-cta">
+              Login
+            </Link>
+          </li>
+          <li>
+            <Link to="/register" className="nav-cta">
+              Register
             </Link>
           </li>
         </ul>
