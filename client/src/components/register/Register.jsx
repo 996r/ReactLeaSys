@@ -1,5 +1,39 @@
-import { Link } from "react-router";
+import { useContext } from "react";
+import useForm from "../hooks/useForm";
+import { Link, useNavigate } from "react-router";
+import UserContext from "../context/UserContext";
 export default function Register () {
+
+    const navigate = useNavigate();
+
+    const {registerHandler} = useContext(UserContext)
+
+    const registerSubmitHandler = async (values) => {
+        const {email, password, confirmPassword} = values;
+
+          if (!email || !password) {
+            return alert('Email and password are required!');
+        }
+
+        if (password !== confirmPassword) {
+            return alert('Password missmatch!');
+        }
+
+        try {
+            await registerHandler(email, password);
+            navigate('/');
+        } catch (err) {
+            alert(err.message);
+        }
+    }
+        const {
+            register,
+            formAction,
+            } = useForm(registerSubmitHandler, {
+                email:'',
+                password: '',
+                confirmPassword: '',
+            });
 
 
     return (
@@ -12,32 +46,20 @@ export default function Register () {
     </div>
     <div className="contact-content">
       <div className="contact-form-wrapper">
-        <form id="contactForm">
+        <form id="contactForm" action={formAction}>
           <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="firstName">First Name</label>
-              <input type="text" id="firstName" name="firstName" placeholder="John" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="lastName">Last Name</label>
-              <input type="text" id="lastName" name="lastName" placeholder="Doe" required />
-            </div>
-          </div>
+           </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+            <input type="email" id="email" {...register('email')} placeholder="john@example.com" required />
           </div>
           <div className="form-group">
-            <label htmlFor="phone">Phone</label>
-            <input type="text" id="phone" name="phone" placeholder="+359 999888777" required />
-          </div>
-           <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input type="password" id="password" name="password" placeholder="*******" required />
+              <input type="password" id="password" {...register('password')} placeholder="*******" required />
             </div>
             <div className="form-group">
-              <label htmlFor="rePassword">Re-Password</label>
-              <input type="password" id="rePassword" name="rePassword" placeholder="********" required />
+              <label htmlFor="confirmPassword">Confirm Password </label>
+              <input type="password" id="confirmPassword" {...register('confirmPassword')} placeholder="********" required />
             </div>
           
           <button type="submit" className="form-submit">Register</button>
