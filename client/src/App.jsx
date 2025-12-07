@@ -7,6 +7,8 @@ import Feature from "./components/feature/Feature";
 import Contact from "./components/contact/Contact";
 import Register from "./components/register/Register";
 import Login from "./components/login/Login";
+import AddCar from "./components/addCar/AddCar";
+import Logout from "./components/logout/Logout";
 
 
 
@@ -17,21 +19,16 @@ function App() {
     <>
    
      <Header/>
+
     <Routes>
-    {/* <Route path="/" element={
-              <>
-                  <Hero/>
-                  <Collection/>
-                  <Feature/>
-                  <Contact/>
-              </>
-          } /> */}
-          <Route path="/" element={<Hero />} />
-         <Route path="/collection" element={<Collection />} /> 
+        <Route path="/" element={<Hero />} />
+        <Route path="/collection" element={<Collection />} /> 
         <Route path="/feature" element={<Feature />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/addCar" element={<AddCar />} /> 
+        <Route path="/logout" element={<Logout />} />
     </Routes>
      
     <Footer/>

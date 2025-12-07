@@ -1,62 +1,69 @@
 import { useContext, useEffect, useState } from "react";
 import UserContext from "../context/UserContext";
 
+export default function useRequest(url, initialState) {
+  const baseUrl = "http://localhost:3030";
 
+  const { user, isAuthenticated } = useContext(UserContext);
+  const [data, setData] = useState(initialState);
 
-export default function useRequest (url, initialState = {}) {
+  const request = async (url, method, data, config = {}) => {
+    let headers = {};
 
-    const baseUrl = "http://localhost:3030";
+    if (data) {
+      headers["content-type"] = "application/json";
+    }
 
-    const {user, isAuthenticated} = useContext(UserContext);
-    const [data, setData] = useState(initialState);
+    const token = config.accessToken || user?.accessToken;
 
-    const request = async (url, method, data, config = {}) => {
+    if (token) {
+      headers["X-Authorization"] = token;
+    }
 
-        let options = {} ;
+    const finalOptions = {
+      method: method || "GET",
+      body: data ? JSON.stringify(data) : undefined,
 
-        if(method){
-            options.method = method;
-        }
-
-        if (data){
-            options.header = {
-                 "content-type": "application/json",
-            };
-            options.body = JSON.stringify(data);
-        }
-
-        if(config.accessToken || isAuthenticated) {
-            options.headers = {
-                ...options.headers,
-                "X-Autherization": config.accessToken || user.accessToken,
-            }; 
-        }
-
-        const response = await fetch(`${baseUrl}${url}`,options);
-
-         if (!response.ok) {
-             throw response.statusText;
-            }
-         if (response.status === 204) {
-            return {};
-         }
-
-        const result = await response.json();
-        return result;
-
+      ...(Object.keys(headers).length > 0 && { headers: headers }),
     };
 
-    useEffect (() => {
-        if(!url) return;
+    const response = await fetch(`${baseUrl}${url}`, finalOptions);
 
-        request(url).then((result) => setData(result))
-        .catch(err => alert(err));
-    },[url]);
+    if (!response.ok) {
+      if (response.status === 403 && url === "/users/logout") {
+        console.warn(
+          "Server rejected logout (session already invalid). Resolving promise successfully."
+        );
+        return {};
+      }
+    }
 
-    return {
-        request,
-        data,
-        setData,
-    };
+    if (response.status === 204) {
+      return {};
+    }
 
+    const result = await response.json();
+    return result;
+  };
+
+  useEffect(() => {
+    if (!url) return;
+
+    const isAuthRequired =
+      url.startsWith("/data") || url.startsWith("/profile");
+
+    if (isAuthRequired && !isAuthenticated) {
+      return;
+    }
+
+    request(url)
+      .then((result) => setData(result))
+      .catch((err) => alert(err));
+  }, [url, isAuthenticated]);
+
+  return {
+    request,
+    data,
+    setData,
+  };
 }
