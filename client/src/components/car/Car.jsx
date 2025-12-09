@@ -19,7 +19,7 @@ export default function Car ({
                 <h3 className="card-title">{mark} {model}</h3> 
                 <p className="card-subtitle">{category} Collection</p>
                
-                <p className="card-price">{price.toFixed(2)} EUR</p> 
+                <p className="card-price">{price} EUR</p> 
             </div>
         </div>
     );

@@ -1,14 +1,15 @@
 const BASE_URL = "http://localhost:3030/jsonstore/cars";
 import Car from "../car/Car";
-import { useEffect, useState } from "react";
+import { useContext,useEffect, useState } from "react";
+import { CarDataContext } from "../context/CarDataContext";
 
 
 export default function Collection() 
 
   {
 
-    const[cars, setCars] = useState([]);
-
+   
+    const { cars, setCars, refreshKey } = useContext(CarDataContext);
     const [selectedCategory, setSelectedCategory] = useState('all');
 
      useEffect(() => {
@@ -23,6 +24,8 @@ export default function Collection()
                    const data = await response.json();
                 
                 const carsArray = Object.values(data);
+
+                console.log(data);
                 
                 setCars(carsArray);
 
@@ -35,8 +38,8 @@ export default function Collection()
 
     
         fetchCars();
-
-        },[]);
+            
+        },[setCars, refreshKey]);
 
         const handleCategoryClick = (category) => {
             setSelectedCategory(category);
