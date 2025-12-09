@@ -25,9 +25,7 @@ export default function Collection()
                 
                 const carsArray = Object.values(data);
 
-                console.log(data);
-                
-                setCars(carsArray);
+                 setCars(carsArray);
 
             } catch (error) {
                 
