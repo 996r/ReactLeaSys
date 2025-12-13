@@ -11,7 +11,8 @@ export default function AddCar() {
     data._createdOn = Date.now();
 
     try {
-      await request("/jsonstore/cars", "POST", data);
+      
+      await request('/data/cars', 'POST', data);
 
       navigate("/collection");
     } catch (err) {

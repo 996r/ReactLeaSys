@@ -2,7 +2,9 @@ const BASE_URL = "http://localhost:3030/jsonstore/cars";
 import Car from "../car/Car";
 import { useContext,useEffect, useState } from "react";
 import { CarDataContext } from "../context/CarDataContext";
+import useRequest from "../hooks/useRequest";
 
+const API_PATH = "/data/cars";
 
 export default function Collection() 
 
@@ -11,18 +13,13 @@ export default function Collection()
    
     const { cars, setCars, refreshKey } = useContext(CarDataContext);
     const [selectedCategory, setSelectedCategory] = useState('all');
+    const {request} = useRequest(null,[]);
 
      useEffect(() => {
       
         const fetchCars = async () => {
             try {
-                const response = await fetch(BASE_URL);
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                   const data = await response.json();
-                
+                const data = await request (API_PATH, 'GET');
                 const carsArray = Object.values(data);
 
                  setCars(carsArray);
@@ -30,14 +27,14 @@ export default function Collection()
             } catch (error) {
                 
                 console.error("Failed to fetch car data:", error);
-                alert("Could not load car data. Check the server connection.");
+            setCars([]);
             }
         };
 
     
         fetchCars();
             
-        },[setCars, refreshKey]);
+        },[setCars, refreshKey,request]);
 
         const handleCategoryClick = (category) => {
             setSelectedCategory(category);

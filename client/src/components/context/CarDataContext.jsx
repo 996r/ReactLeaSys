@@ -27,6 +27,7 @@ export function CarDataProvider({ children }) {
         cars, 
         setCars,
         addCarLocally, 
+        setRefreshKey,
         refreshKey,
         triggerRefresh: useCallback(() => {
              setRefreshKey(prevKey => prevKey +1);

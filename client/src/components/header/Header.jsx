@@ -6,6 +6,7 @@ import { useContext } from "react";
 export default function Header() 
 {
 const { isAuthenticated } = useContext(UserContext);
+const { isAdmin } = useContext(UserContext);  
 
   return (
     <nav id="navbar">
@@ -59,9 +60,16 @@ const { isAuthenticated } = useContext(UserContext);
           </li>
          {isAuthenticated ? (
           <>
+          {isAdmin && (
           <li>
             <Link to="/addCar" className="nav-cta">
               Add Car
+            </Link>
+          </li>
+          )}
+          <li>
+            <Link to="/addCar" className="nav-cta">
+              Buy Car
             </Link>
           </li>
           <li>

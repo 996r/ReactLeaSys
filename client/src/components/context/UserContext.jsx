@@ -1,8 +1,10 @@
 import { createContext, useState } from "react";
 import useRequest from "../hooks/useRequest";
+import {ADMIN_EMAILS} from "../constrants/constrants"
 
 const UserContext = createContext({
   isAuthenticated: false,
+  isAdmin: false,
 
   user: {
     email: "",
@@ -48,6 +50,8 @@ export function UserProvider(props) {
   const userContextValues = {
     user,
     isAuthenticated: !!user?.accessToken,
+    isAdmin: ADMIN_EMAILS.includes(user?.email),
+
     registerHandler,
     loginHandler,
     logoutHandler,
