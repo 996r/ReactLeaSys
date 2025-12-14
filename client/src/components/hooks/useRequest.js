@@ -66,6 +66,8 @@ export default function useRequest(url, initialState) {
       return {};
     }
 
+    
+
     const result = await response.json();
     return result;
   }, [user, isAdmin, baseUrl]); 

@@ -34,7 +34,7 @@ export default function AddCar() {
     <section className="contact" id="contact">
       <div className="contact-container">
         <div className="contact-header">
-          <h2 className="section-title">Get In Touch</h2>
+          <h2 className="section-title">Please fill the form</h2>
           <p className="section-subtitle">We'd love to hear from you</p>
         </div>
         <div
@@ -119,7 +119,7 @@ export default function AddCar() {
                   {...register("summary")}
                   placeholder="Car Description..."
                   required
-                  // ❌ REMOVED: defaultValue={""}
+                  
                 />
               </div>
 

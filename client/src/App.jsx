@@ -9,7 +9,9 @@ import Register from "./components/register/Register";
 import Login from "./components/login/Login";
 import AddCar from "./components/addCar/AddCar";
 import Logout from "./components/logout/Logout";
-
+import Details from "./components/details/Details";
+import EditCar from "./components/editCar/EditCar";
+import AdminGuard from "./components/guards/AdminGuard";
 
 
 function App() {
@@ -27,8 +29,11 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/addCar" element={<AddCar />} /> 
+        <Route path="/addCar" element={<AdminGuard element = {AddCar}/>} /> 
         <Route path="/logout" element={<Logout />} />
+        <Route path="/cars/:carId" element={<Details />} />
+        <Route path="/cars/edit/:carId" element={<AdminGuard element = {EditCar} />} />
+
     </Routes>
      
     <Footer/>

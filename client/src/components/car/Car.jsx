@@ -14,23 +14,24 @@ export default function Car({
   imageUrl,
 }) {
   const { isAdmin } = useContext(UserContext);
-  const {setRefreshKey} = useContext(CarDataContext);
-  const {request} = useRequest();
+  const { setRefreshKey } = useContext(CarDataContext);
+  const { request } = useRequest();
 
   const onDeleteHandler = async () => {
-
-    if(!isAdmin) {
-        alert("Unauthorized Action.");
-        return;
+    if (!isAdmin) {
+      alert("Unauthorized Action.");
+      return;
     }
-    if (window.confirm(`Are you sure you want to delete this car ${mark} ${model} ?`)) {
-    
-        const deleteUrl = `/data/cars/${_id}`;
-        await request(deleteUrl, 'DELETE');
-        setRefreshKey (prev => prev +1);
-        console.log(`Successfully deleted car with ID: ${_id}`);
-        
-}
+    if (
+      window.confirm(
+        `Are you sure you want to delete this car ${mark} ${model} ?`
+      )
+    ) {
+      const deleteUrl = `/data/cars/${_id}`;
+      await request(deleteUrl, "DELETE");
+      setRefreshKey((prev) => prev + 1);
+      console.log(`Successfully deleted car with ID: ${_id}`);
+    }
   };
 
   return (

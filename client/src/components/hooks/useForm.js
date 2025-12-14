@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function useForm(callback, initialValues) {
+export default function useForm(callback, initialValues, ) {
     const [values, setValues] = useState(initialValues);
 
     const changeHandler = (e) => {
@@ -10,8 +10,13 @@ export default function useForm(callback, initialValues) {
         }))
     };
 
-    const formAction = (formData) => {
-        callback(values, formData);
+    
+    const formAction = (event) => {
+       
+        if (event && typeof event.preventDefault === 'function') {
+            event.preventDefault(); 
+        }
+          callback(values); 
     }
 
     const register = (fieldName) => {

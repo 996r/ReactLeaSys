@@ -2,11 +2,9 @@ import { Link } from "react-router";
 import UserContext from "../context/UserContext";
 import { useContext } from "react";
 
-
-export default function Header() 
-{
-const { isAuthenticated } = useContext(UserContext);
-const { isAdmin } = useContext(UserContext);  
+export default function Header() {
+  const { isAuthenticated } = useContext(UserContext);
+  const { isAdmin } = useContext(UserContext);
 
   return (
     <nav id="navbar">
@@ -53,49 +51,48 @@ const { isAdmin } = useContext(UserContext);
             </Link>
           </li>
           <li>
-            
             <Link to="/contact" className="nav-link">
               Contact
             </Link>
           </li>
-         {isAuthenticated ? (
-          <>
           {isAdmin && (
-          <li>
-            <Link to="/addCar" className="nav-cta">
-              Add Car
-            </Link>
-          </li>
+            <li>
+              <Link to="/addCar" className="nav-cta">
+                Add Car
+              </Link>
+            </li>
           )}
-          <li>
-            <Link to="/addCar" className="nav-cta">
-              Buy Car
-            </Link>
-          </li>
-          <li>
-            <Link to="/logout" className="nav-cta">
-              Logout
-            </Link>
-          </li>
-          </>
-         ):(
-          <>
-          <li>
-            <Link to="/login" className="nav-cta">
-              Login
-            </Link>
-          </li>
-          <li>
-            <Link to="/register" className="nav-cta">
-              Register
-            </Link>
-          </li>
-          </>
-         )}
-         
-          </ul>
-          
-         
+          {isAuthenticated ? (
+            <>
+              {!isAdmin && (
+                <li>
+                  <Link to="/addCar" className="nav-cta">
+                    Buy Car
+                  </Link>
+                </li>
+              )}
+              <li>
+                <Link to="/logout" className="nav-cta">
+                  Logout
+                </Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to="/login" className="nav-cta">
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Link to="/register" className="nav-cta">
+                  Register
+                </Link>
+              </li>
+            </>
+          )}
+        </ul>
+
         <div className="menu-toggle" id="menuToggle">
           <span></span>
           <span></span>
