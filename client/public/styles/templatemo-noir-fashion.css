@@ -25,6 +25,21 @@ https://templatemo.com/tm-599-noir-fashion
 	--bg-section: #0a0a0a;
 }
 
+.contact-form-wrapper input[type="text"],
+.contact-form-wrapper textarea,
+.contact-form-wrapper select { 
+    
+    width: 100%;
+	background:rgba(255, 255, 255, 0.05);
+	color: white;
+	font-size: 16px;
+	font-family: 'Arial', sans-serif;
+    padding: 10px;
+    height: 40px; 
+    box-sizing: border-box; 
+   
+}
+
 html {
 	scroll-behavior: smooth;
 }

@@ -6,13 +6,14 @@ export default function AddCar() {
   const navigate = useNavigate();
   const { request } = useRequest();
 
+  const CATEGORIES = ["Sport", "SUV", "Luxury", "Limited Edition"];
+
   const addCarHandler = async (values) => {
     const data = values;
     data._createdOn = Date.now();
 
     try {
-      
-      await request('/data/cars', 'POST', data);
+      await request("/data/cars", "POST", data);
 
       navigate("/collection");
     } catch (err) {
@@ -72,13 +73,22 @@ export default function AddCar() {
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="category">Category</label>
-                  <input
-                    type="text"
+                  <select
                     id="category"
                     {...register("category")}
-                    placeholder="Sport"
                     required
-                  />
+                    className="form-group"
+                  >
+                    <option value="" disabled hidden>
+                      Select a Category
+                    </option>
+
+                    {CATEGORIES.map((category) => (
+                      <option key={category} value={category}>
+                        {category}
+                      </option>
+                    ))}
+                  </select>
                 </div>
                 <div className="form-group">
                   <label htmlFor="price">Price</label>
@@ -119,7 +129,6 @@ export default function AddCar() {
                   {...register("summary")}
                   placeholder="Car Description..."
                   required
-                  
                 />
               </div>
 
