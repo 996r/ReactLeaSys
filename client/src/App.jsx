@@ -12,6 +12,7 @@ import Logout from "./components/logout/Logout";
 import Details from "./components/details/Details";
 import EditCar from "./components/editCar/EditCar";
 import AdminGuard from "./components/guards/AdminGuard";
+import BuyCar from "./components/buyCar/BuyCar";
 
 
 function App() {
@@ -33,6 +34,8 @@ function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/cars/:carId" element={<Details />} />
         <Route path="/cars/edit/:carId" element={<AdminGuard element = {EditCar} />} />
+        <Route path="/cars/:carId/buy" element={<BuyCar />} />
+
 
     </Routes>
      

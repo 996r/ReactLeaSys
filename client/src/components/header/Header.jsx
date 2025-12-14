@@ -64,13 +64,7 @@ export default function Header() {
           )}
           {isAuthenticated ? (
             <>
-              {!isAdmin && (
-                <li>
-                  <Link to="/addCar" className="nav-cta">
-                    Buy Car
-                  </Link>
-                </li>
-              )}
+              
               <li>
                 <Link to="/logout" className="nav-cta">
                   Logout

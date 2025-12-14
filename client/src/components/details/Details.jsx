@@ -7,7 +7,8 @@ import { CarDataContext } from "../context/CarDataContext";
 export default function Details() {
   const { carId } = useParams();
   const { request } = useRequest();
-  const { user, isAdmin } = useContext(UserContext);
+  const { isAuthenticated, isAdmin } = useContext(UserContext);
+  
   const { triggerRefresh } = useContext(CarDataContext);
   const navigate = useNavigate();
 
@@ -84,6 +85,16 @@ export default function Details() {
             <Link to="/collection" className="feature-cta">
               Back to Collection
             </Link>
+            <div>
+              {!isAdmin && isAuthenticated  && (
+                <Link 
+                to={`/cars/${carId}/buy`} 
+                className="feature-cta"
+            >
+                Buy This Car
+            </Link>
+              )}
+              </div>
             <div>
               {isAdmin && (
                 <button onClick={onDeleteHandler} className="feature-cta">
