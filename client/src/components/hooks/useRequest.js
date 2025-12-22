@@ -5,7 +5,9 @@ import UserContext from "../context/UserContext";
 import { ADMIN_EMAILS } from "../constrants/constrants";
 
 export default function useRequest(url, initialState) {
-  const baseUrl = "http://localhost:3030";
+  // const baseUrl = "http://localhost:3030";
+  const baseUrl = "https://reactleasysserver.onrender.com";
+  
 
   const SECURE_COLLECTION_PATH_START = '/data';
 
