@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
 
-const BASE_URL = "http://localhost:3030/jsonstore/cars";
+// const BASE_URL = "http://localhost:3030/jsonstore/cars";
+const BASE_URL = "https://reactleasysserver.onrender.com/jsonstore/cars";
 
 export default function Hero() {
 
